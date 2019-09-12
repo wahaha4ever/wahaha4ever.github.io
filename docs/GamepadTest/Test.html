@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Framework</title>
+  <!--  Simple reset to delete the margins  -->
+  <style>
+    body { margin: 0; }
+    canvas { width: 100%; height: 100% }
+	#score {
+		position: absolute;
+		margin:0px;		
+		indent:0px;
+		top: 0px;
+		right: 10px;
+		width: 30%;
+		text-align: right;
+		z-index: 101;
+		display:block;
+		color : #FF0000;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size : 0.7em;
+	}
+	#info {
+		position: absolute;
+		margin:0px;		
+		indent:0px;
+		top: 0px;
+		width: 100%;
+		text-align: center;
+		z-index: 100;
+		display:block;
+		color : #FF0000;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 0.8em;
+	}
+  </style>
+  <script src="..\lib\three.min.js""></script>
+  <script src="..\lib\OrbitControls.js"></script>
+  <script src="..\lib\stats.min.js"></script>
+</head>
+<body>
+  <!--  Our code  -->
+  <script src="..\lib\Framework.js"></script> 
+  <script src="..\lib\MTLLoader.js"></script>
+  <script src="..\lib\OBJLoader.js"></script>
+  <script src="..\lib\FBXLoader.js"></script>
+  <script src="..\lib\GLTFLoader.js"></script>
+  <script src="..\lib\inflate.min.js"></script>
+  <script src="GamepadAdapter.js"></script>
+  <script src="Test.js"></script> 
+  <div id="info"></div>
+  <div id="score"></div>
+  <script>
+	//var init = function (scene){
+	//	//var name = "goku";//"mario-sculpture";
+	//	//CoreLib.InitFbx(name, "goku/", function(object) {
+	//	//	scene.add(object);
+	//	//});
+	//	
+	//	//var name = "mario-sculpture";
+	//	//CoreLib.InitMtlObj(name, "", function(object) {
+	//	//	scene.add(object);
+	//	//});
+	//	
+	//	//var name = "untitled2.glb";
+	//	//CoreLib.InitGLTF(name, "", function(object) {
+	//	//	scene.add(object.scene);
+	//	//});
+	//}
+	//CoreLib.Init(true, null, init);	
+	//CoreLib.Run();
+	
+	//var init = function (scene){
+	//	//var promises = [];
+	//	//
+	//	//var p1 = CoreLib.InitGLTF("untitled2.glb", "", function(object) {
+	//	//	scene.add(object.scene);
+	//	//});
+	//	//
+	//	//var p2 = CoreLib.InitFbx("goku", "goku/", function(object) {
+	//	//	scene.add(object);
+	//	//});
+	//	//
+	//	//var p3 = CoreLib.InitMtlObj("mario-sculpture", "", function(object) {
+	//	//	scene.add(object);
+	//	//});
+	//	//
+	//	//var p4 = CoreLib.InitTexture("BGImage.jpg", "", function(texture) {
+	//	//	texture.minFilter = THREE.LinearFilter;
+	//	//	var sphere = new THREE.Mesh(
+	//	//		new THREE.SphereGeometry(8000, 20, 20),
+	//	//		new THREE.MeshBasicMaterial({
+	//	//			side: THREE.DoubleSide,
+	//	//			map: texture
+	//	//		})
+	//	//	);
+	//	//	sphere.scale.x = -1;
+	//	//	scene.add(sphere);
+	//	//});
+	//	//
+	//	//promises.push(p1);
+	//	//promises.push(p2);
+	//	//promises.push(p3);
+	//	//promises.push(p4);
+	//	//
+	//	//Promise.all(promises).then( 
+	//	//	function (arrayOfObjects) {
+	//	//		//objGrp.add( arrayOfObjects[0] );
+	//	//		console.log("Run");
+	//	//		CoreLib.Run();
+	//	//		//return arrayOfObjects[0];
+	//	//		//scene.add( arrayOfObjects[0] );
+	//	//	}, 
+	//	//	function (error)  {
+	//	//		console.error( "Could not load all textures:", error );			
+	//	//	}
+	//	//);		
+	//	//for (var i=0; i<10; i++)
+	//	//{
+	//	//	var floor = GameLogic.InitFloor(600);
+	//	//	scene.add( floor );
+	//	//	//floorArray.push(floor);
+	//	//	//floor.position.z = -1 * i * gFloorWidth ;
+	//	//	floor.position.y = -100
+	//	//	floor.position.z = -1 * i * 600 ;
+	//	//}
+	//	
+	//	GameLogic.Init(scene);
+	//};
+	CoreLib.Init(true, null, GameLogic.Init, GameLogic.InitKey, GameLogic.Render);		
+  </script>
+</body>
+</html>
